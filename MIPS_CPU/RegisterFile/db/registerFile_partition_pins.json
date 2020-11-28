@@ -1,0 +1,261 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "regA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[4]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[5]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[6]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[7]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[8]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[9]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[10]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[11]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[12]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[13]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[14]",
+					"strict" : false
+				},
+				{
+					"name" : "regA[15]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[4]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[5]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[6]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[7]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[8]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[9]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[10]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[11]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[12]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[13]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[14]",
+					"strict" : false
+				},
+				{
+					"name" : "regB[15]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegA[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegA[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegA[2]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegB[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegB[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_OutRegB[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[0]",
+					"strict" : false
+				},
+				{
+					"name" : "data_InReg[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_InReg[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_InReg[3]",
+					"strict" : false
+				},
+				{
+					"name" : "enable",
+					"strict" : false
+				},
+				{
+					"name" : "data_InReg[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rst",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[1]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[2]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[3]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[4]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[5]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[6]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[7]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[8]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[9]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[10]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[11]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[12]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[13]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[14]",
+					"strict" : false
+				},
+				{
+					"name" : "data_In[15]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

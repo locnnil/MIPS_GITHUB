@@ -1,0 +1,41 @@
+module DataMemory (
+	clk, 			// clock da memoria
+	addr, 		// input de endereço
+	data_in, 	// input de dados 
+	we, 			// write enable
+	cs, 			// chip select
+	data_out);	// output de dados 
+		
+	//----- Parametros -----	
+	
+	parameter SIZE = 32;				// tamanho da palavra 
+	parameter ADDR_SIZE = 1024;	// tamanho da memória 
+	//----- Portas In -----
+	
+	input clk, we, cs;
+	input [SIZE - 1 : 0] addr;
+	input [SIZE - 1 : 0] data_in;
+	
+	//----- Portas Out -----
+	
+	output reg [SIZE - 1 : 0] data_out;
+	
+	//----- Variaveis Internas -----
+	
+	reg[SIZE - 1 : 0] memory [0 : ADDR_SIZE - 1];	// memoria de 1024 endereços com tamanho de 32 bits para cada palavra
+	
+	
+	//----- Alocação de Operações -----
+	
+	
+	//----- Código -----
+	
+	always @(posedge clk) begin
+		if(cs == 1 && we == 1)
+			memory[addr] <= data_in;
+		else
+		if (we == 0)
+			data_out <= memory[addr];
+	end
+	
+endmodule

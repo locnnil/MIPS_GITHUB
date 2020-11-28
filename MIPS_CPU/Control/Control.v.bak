@@ -1,0 +1,5 @@
+module control(
+	instruction,
+	output_control
+);
+

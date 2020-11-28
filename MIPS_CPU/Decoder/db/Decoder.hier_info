@@ -1,0 +1,46 @@
+|Decoder
+in[0] => ~NO_FANOUT~
+in[1] => ~NO_FANOUT~
+in[2] => ~NO_FANOUT~
+in[3] => ~NO_FANOUT~
+in[4] => ~NO_FANOUT~
+in[5] => ~NO_FANOUT~
+in[6] => ~NO_FANOUT~
+in[7] => ~NO_FANOUT~
+in[8] => ~NO_FANOUT~
+in[9] => ~NO_FANOUT~
+in[10] => ~NO_FANOUT~
+in[11] => ~NO_FANOUT~
+in[12] => ~NO_FANOUT~
+in[13] => in[13].IN1
+in[14] => in[14].IN1
+in[15] => in[15].IN1
+out[0] <= dec7442:U1.saida
+out[1] <= dec7442:U1.saida
+out[2] <= dec7442:U1.saida
+out[3] <= dec7442:U1.saida
+out[4] <= dec7442:U1.saida
+out[5] <= dec7442:U1.saida
+out[6] <= dec7442:U1.saida
+out[7] <= dec7442:U1.saida
+out[8] <= dec7442:U1.saida
+out[9] <= dec7442:U1.saida
+
+
+|Decoder|dec7442:U1
+entrada[0] => Decoder0.IN3
+entrada[1] => Decoder0.IN2
+entrada[2] => Decoder0.IN1
+entrada[3] => Decoder0.IN0
+saida[0] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[8] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[9] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

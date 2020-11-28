@@ -1,0 +1,115 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do multiplicador_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:20 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v 
+# -- Compiling module counter
+# 
+# Top level modules:
+# 	counter
+# End time: 00:45:20 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:20 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v 
+# -- Compiling module controller
+# 
+# Top level modules:
+# 	controller
+# End time: 00:45:20 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:20 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v 
+# -- Compiling module acc
+# 
+# Top level modules:
+# 	acc
+# End time: 00:45:20 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:21 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 00:45:21 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:21 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v 
+# -- Compiling module multiplicador
+# 
+# Top level modules:
+# 	multiplicador
+# End time: 00:45:21 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/Rodrigo\ Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador {C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:45:21 on Nov 26,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador" C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v 
+# -- Compiling module multiplicador_TB
+# 
+# Top level modules:
+# 	multiplicador_TB
+# End time: 00:45:21 on Nov 26,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  multiplicador_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=""+acc"" multiplicador_TB 
+# Start time: 00:45:21 on Nov 26,2019
+# Loading work.multiplicador_TB
+# Loading work.multiplicador
+# Loading work.acc
+# Loading work.counter
+# Loading work.controller
+# Loading work.adder
+# ** Warning: (vsim-3017) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v(9): [TFMPC] - Too few port connections. Expected 7, found 5.
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v
+# ** Warning: (vsim-3722) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v(9): [TFMPC] - Missing connection for port 'idle'.
+# ** Warning: (vsim-3722) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v(9): [TFMPC] - Missing connection for port 'done'.
+# ** Warning: (vsim-3015) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(12): [PCDPC] - Port size (4) does not match connection size (1) for port 'multiplicador'. The port definition is at: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/ACC File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v
+# ** Warning: (vsim-3015) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(12): [PCDPC] - Port size (5) does not match connection size (1) for port 'adder'. The port definition is at: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/ACC File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v
+# ** Warning: (vsim-3017) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(22): [TFMPC] - Too few port connections. Expected 4, found 3.
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/COUNTER File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v
+# ** Warning: (vsim-3722) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(22): [TFMPC] - Missing connection for port 'sh'.
+# ** Warning: (vsim-3017) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(30): [TFMPC] - Too few port connections. Expected 12, found 11.
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/CONTROL File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v
+# ** Warning: (vsim-3722) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(30): [TFMPC] - Missing connection for port 'final'.
+# ** Warning: (vsim-3015) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(44): [PCDPC] - Port size (17) does not match connection size (16) for port 'opA'. The port definition is at: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v(2).
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/ADDER File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v
+# ** Warning: (vsim-3015) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(44): [PCDPC] - Port size (17) does not match connection size (16) for port 'opB'. The port definition is at: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/ADDER File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v
+# ** Warning: (vsim-3015) C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v(44): [PCDPC] - Port size (33) does not match connection size (1) for port 'soma'. The port definition is at: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v(4).
+#    Time: 0 ps  Iteration: 0  Instance: /multiplicador_TB/DUT/ADDER File: C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ** Note: $stop    : C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v(36)
+#    Time: 5 us  Iteration: 0  Instance: /multiplicador_TB
+# Break in Module multiplicador_TB at C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v line 36
+# End time: 00:48:53 on Nov 26,2019, Elapsed time: 0:03:32
+# Errors: 0, Warnings: 12

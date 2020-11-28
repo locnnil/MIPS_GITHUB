@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/simulation/modelsim
+vBusController
+Z1 !s110 1574737750
+!i10b 1
+!s100 >_]6nGz^Pi]chlQ`DR^2B2
+I:=?C<]kZ>fAC[8D^imRNj0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1574705708
+8C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController.v
+FC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1574737750.000000
+!s107 C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController|C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController
+Z7 tCvgOpt 0
+n@bus@controller
+vBusController_TB
+R1
+!i10b 1
+!s100 lOoLl01zLLPT09AT7?B^P1
+IOMlWle_J^UmTRX^m`oYjR0
+R2
+R0
+w1574737621
+8C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController_TB.v
+FC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController|C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/BusController/BusController_TB.v|
+!i113 1
+R5
+R6
+R7
+n@bus@controller_@t@b

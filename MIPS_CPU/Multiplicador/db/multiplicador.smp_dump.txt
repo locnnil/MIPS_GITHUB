@@ -1,0 +1,6 @@
+
+State Machine - |multiplicador|controller:CONTROL|estado
+Name estado.00 estado.10 estado.01 
+estado.00 0 0 0 
+estado.01 1 0 1 
+estado.10 1 1 0 

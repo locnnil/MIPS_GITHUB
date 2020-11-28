@@ -1,0 +1,12 @@
+module BusController(
+	input clk,
+	input cs,
+	input[31:0] dataIn,
+	output reg[31:0] dataOut
+);
+
+always @ (posedge clk) begin
+	assign dataOut = (cs)? dataIn : 32'bz; 
+end
+
+endmodule

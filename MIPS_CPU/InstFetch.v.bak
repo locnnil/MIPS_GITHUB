@@ -1,0 +1,27 @@
+module InstFetch(
+	input clk, rst;
+	output [31:0] IF_OUT;
+);
+
+wire [9:0] pco;
+wire [9:0] instmem;
+
+module PC pc(
+	.clk(clk),
+	.rst(rst),
+	.pc_out(pco)
+);
+
+module Register RINST(
+	.clk(clk),
+	.rst(rst),
+	.data_In(instmem),
+	.data_Out(IF_OUT)
+);
+
+module instructionmemory IM(
+	.clock(clk),
+	.address(pco),
+	.data_out(instmem)
+);
+endmodule

@@ -1,0 +1,143 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/simulation/modelsim
+vacc
+Z1 !s110 1574739920
+!i10b 1
+!s100 ZnCC4Leeh2<HZcZJN4`di3
+ID5d4]E@BJ5F`=mODbWmBz3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1574727475
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z5 !s108 1574739920.000000
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc/acc.v|
+!i113 1
+Z6 o-vlog01compat -work work
+!s92 -vlog01compat -work work {+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/acc}
+Z7 tCvgOpt 0
+vadder
+Z8 !s110 1574739921
+!i10b 1
+!s100 _zbXKnJIkA_fhCWYPUeM^3
+I6gjm6UH]2Y]FV[X[KbNzO1
+R2
+R0
+R3
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v
+L0 1
+R4
+r1
+!s85 0
+31
+Z9 !s108 1574739921.000000
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder/adder.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/4_bit_adder}
+R7
+vcontroller
+R1
+!i10b 1
+!s100 DB=EDom;0JF`QmmXV43IQ2
+ITZLi7SejJjkVNJi0>QD<H0
+R2
+R0
+R3
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller/controller.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/controller}
+R7
+vcounter
+R1
+!i10b 1
+!s100 HockH:JoEUN292>P_I`;52
+Io^NSZUdd4gH>dQBU^hj]M0
+R2
+R0
+R3
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter/counter.v|
+!i113 1
+R6
+!s92 -vlog01compat -work work {+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/counter}
+R7
+vmultiplicador
+R8
+!i10b 1
+!s100 N@iI>`>YWRk=IZDz@0Flf2
+I;a9PnGMII=:zo7bSD`o>E3
+R2
+R0
+R3
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v
+L0 1
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador.v|
+!i113 1
+R6
+Z10 !s92 -vlog01compat -work work {+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador}
+R7
+vmultiplicador_TB
+R8
+!i10b 1
+!s100 O_UW>FlcFn>W<5EHkaBK11
+IK=^07K0=9?D78]H;eN`H10
+R2
+R0
+w1574739878
+8C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v
+FC:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v
+L0 3
+R4
+r1
+!s85 0
+31
+R9
+!s107 C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador|C:/Users/Rodrigo Coelho/Desktop/unifei/ELTD15/MIPS/MIPS_CPU/Multiplicador/multiplicador_TB.v|
+!i113 1
+R6
+R10
+R7
+nmultiplicador_@t@b

@@ -1,0 +1,61 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# do Decoder_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442 {C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:10:50 on Nov 25,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442" C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v 
+# -- Compiling module dec7442
+# 
+# Top level modules:
+# 	dec7442
+# End time: 00:10:51 on Nov 25,2019, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder {C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:10:51 on Nov 25,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder" C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder.v 
+# -- Compiling module Decoder
+# 
+# Top level modules:
+# 	Decoder
+# End time: 00:10:51 on Nov 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder {C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder_TB.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 00:10:51 on Nov 25,2019
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder" C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder_TB.v 
+# -- Compiling module Decoder_TB
+# 
+# Top level modules:
+# 	Decoder_TB
+# End time: 00:10:51 on Nov 25,2019, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs="+acc"  Decoder_TB
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneiv_hssi_ver -L cycloneiv_pcie_hip_ver -L cycloneiv_ver -L rtl_work -L work -voptargs=""+acc"" Decoder_TB 
+# Start time: 00:10:51 on Nov 25,2019
+# Loading work.Decoder_TB
+# Loading work.Decoder
+# Loading work.dec7442
+# ** Warning: (vsim-3015) C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder_TB.v(6): [PCDPC] - Port size (10) does not match connection size (16) for port 'out'. The port definition is at: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder.v(3).
+#    Time: 0 ps  Iteration: 0  Instance: /Decoder_TB/DUT File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/Decoder.v
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# End time: 00:11:05 on Nov 25,2019, Elapsed time: 0:00:14
+# Errors: 0, Warnings: 1

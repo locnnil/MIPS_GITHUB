@@ -1,0 +1,17 @@
+|dec7442
+entrada[0] => Decoder0.IN3
+entrada[1] => Decoder0.IN2
+entrada[2] => Decoder0.IN1
+entrada[3] => Decoder0.IN0
+saida[0] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[1] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[2] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[3] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[4] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[5] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[6] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[7] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[8] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+saida[9] << Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+
+

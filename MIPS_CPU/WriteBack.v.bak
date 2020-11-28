@@ -1,0 +1,14 @@
+module WriteBack(
+	input RD, RM, CTRL_MEM,
+	output RF
+);
+
+//mux
+module mux (.A(RD),
+.B(RF),
+.select(),
+.out(RF)
+);
+//pll?
+
+endmodule

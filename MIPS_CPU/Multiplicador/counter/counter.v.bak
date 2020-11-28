@@ -1,0 +1,5 @@
+module counter(
+	input clk, load;
+);
+
+endmodule

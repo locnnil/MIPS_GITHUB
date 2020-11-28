@@ -1,0 +1,25 @@
+module Memory(
+	input RB,RD, CTRL_EX;
+	output CTRL_WB,RM, RD
+);
+
+//addr memory
+module DataMemory DM(
+	.clk(), 			// clock da memoria
+	.addr(), 		// input de endereço
+	.data_in(), 	// input de dados
+	.we(), 			// write enable
+	.data_out());	// output de dados
+// addr decoding
+module Decoder DEC(
+	input [15:0] .in(),
+	output reg[9:0] .out()
+);
+//bus controller
+module BusController BC(
+	input .cs(),
+	input[31:0] .dataIn(),
+	output[31:0] .dataOut()
+);
+
+endmodule

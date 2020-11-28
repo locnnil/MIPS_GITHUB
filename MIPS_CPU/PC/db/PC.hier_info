@@ -1,0 +1,33 @@
+|PC
+clk => reg_pc[0].CLK
+clk => reg_pc[1].CLK
+clk => reg_pc[2].CLK
+clk => reg_pc[3].CLK
+clk => reg_pc[4].CLK
+clk => reg_pc[5].CLK
+clk => reg_pc[6].CLK
+clk => reg_pc[7].CLK
+clk => reg_pc[8].CLK
+clk => reg_pc[9].CLK
+rst => reg_pc[0].ACLR
+rst => reg_pc[1].ACLR
+rst => reg_pc[2].ACLR
+rst => reg_pc[3].ACLR
+rst => reg_pc[4].ACLR
+rst => reg_pc[5].ACLR
+rst => reg_pc[6].ACLR
+rst => reg_pc[7].ACLR
+rst => reg_pc[8].ACLR
+rst => reg_pc[9].ACLR
+pc_out[0] <= reg_pc[0].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[1] <= reg_pc[1].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[2] <= reg_pc[2].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[3] <= reg_pc[3].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[4] <= reg_pc[4].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[5] <= reg_pc[5].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[6] <= reg_pc[6].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[7] <= reg_pc[7].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[8] <= reg_pc[8].DB_MAX_OUTPUT_PORT_TYPE
+pc_out[9] <= reg_pc[9].DB_MAX_OUTPUT_PORT_TYPE
+
+

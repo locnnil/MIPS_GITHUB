@@ -1,0 +1,15 @@
+module Register(
+	input clk,
+	input rst,
+	input[31:0] data_In,
+	output reg[31:0] data_Out
+);
+
+always @ (posedge clk) begin
+	if(~rst)
+		data_Out <= 0;
+	else
+		data_Out <= data_In;
+end
+
+endmodule

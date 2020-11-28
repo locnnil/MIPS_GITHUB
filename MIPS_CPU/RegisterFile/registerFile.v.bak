@@ -1,0 +1,89 @@
+module registerFile(
+	input clk,
+	input rst,
+	input[31:0] data_In,
+	input[3:0] data_InReg,
+	input enable,
+	input[3:0] data_OutRegA,
+	input[3:0] data_OutRegB,
+	output reg[31:0] regA,
+	output reg[31:0] regB
+);
+
+//16 registros do Register file
+reg[31:0] s0, s1, s2, s3, s4, s5, s6, s7; //0 - 7
+reg[31:0] t0, t1, t2, t3, t4, t5, t6, t7; //8 - 15
+
+initial begin
+ //inicializacao dos 16 registros
+ s0 <= 0; s1 <= 0; s2 <= 0; s3 <= 0; s4 <= 0; s5 <= 0; s6 <= 0; s7 <= 0;
+ t0 <= 0; t1 <= 0; t2 <= 0; t3 <= 0; t4 <= 0; t5 <= 0; t6 <= 0; t7 <= 0;
+end
+
+always @ (posedge clk) begin
+	if(~rst) begin
+		 s0 <= 0; s1 <= 0; s2 <= 0; s3 <= 0; s4 <= 0; s5 <= 0; s6 <= 0; s7 <= 0;
+		 t0 <= 0; t1 <= 0; t2 <= 0; t3 <= 0; t4 <= 0; t5 <= 0; t6 <= 0; t7 <= 0;
+	end
+	else begin
+		if(enable) begin
+			case(data_InReg) //verifica para qual reg enviar os dados
+				0: s0 <= data_In; //salva os dados de entrada no reg0 
+				1: s1 <= data_In;
+				2: s2 <= data_In;
+				3: s3 <= data_In;
+				4: s4 <= data_In;
+				5: s5 <= data_In;
+				6: s6 <= data_In;
+				7: s7 <= data_In;
+				8: t0 <= data_In;
+				9: t1 <= data_In;
+				10: t2 <= data_In;
+				11: t3 <= data_In;
+				12: t4 <= data_In;
+				13: t5 <= data_In;
+				14: t6 <= data_In;
+				15: t7 <= data_In;
+			endcase
+		end
+		
+		case(data_OutRegA) //verifica se deve enviar os dados para o regA
+			0: regA <= s0; //salva no regA o conteudo do reg0
+			1: regA <= s1; 
+			2: regA <= s2; 
+			3: regA <= s3; 
+			4: regA <= s4; 
+			5: regA <= s5; 
+			6: regA <= s6; 
+			7: regA <= s7; 
+			8: regA <= t0; 
+			9: regA <= t1; 
+			10: regA <= t2; 
+			11: regA <= t3; 
+			12: regA <= t4; 
+			13: regA <= t5; 
+			14: regA <= t6; 
+			15: regA <= t7; 
+		endcase
+		
+		case(data_OutRegB)
+			0: regB <= s0; 
+			1: regB <= s1; 
+			2: regB <= s2; 
+			3: regB <= s3; 
+			4: regB <= s4; 
+			5: regB <= s5; 
+			6: regB <= s6; 
+			7: regB <= s7; 
+			8: regB <= t0; 
+			9: regB <= t1; 
+			10: regB <= t2; 
+			11: regB <= t3; 
+			12: regB <= t4; 
+			13: regB <= t5; 
+			14: regB <= t6; 
+			15: regB <= t7; 
+		endcase
+	end
+end
+endmodule

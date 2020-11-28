@@ -1,0 +1,55 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/simulation/modelsim
+vdec7442
+Z1 !s110 1574451533
+!i10b 1
+!s100 <U7k@A4I>E<D8L^ig>K613
+IeYnY1[@zAR03<OkG7T??]2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1574450246
+8C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v
+FC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1574451533.000000
+!s107 C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442|C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442
+Z7 tCvgOpt 0
+vdec7742_TB
+R1
+!i10b 1
+!s100 >^G>nb?;lfPUdZYBz1Xdg1
+I1gCclM1^ZB0cAT4S?b9k[1
+R2
+R0
+w1574451265
+8C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442_TB.v
+FC:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442|C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/Decoder/dec7442/dec7442_TB.v|
+!i113 1
+R5
+R6
+R7
+ndec7742_@t@b

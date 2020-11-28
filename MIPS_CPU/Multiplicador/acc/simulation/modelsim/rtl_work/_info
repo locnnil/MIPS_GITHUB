@@ -1,0 +1,32 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc/simulation/modelsim
+vacc
+!s110 1569249693
+!i10b 1
+!s100 bCjKJ9Xd0782zh0R62lB;2
+I:8hjbdMV_U0=AfS`bDgbf0
+VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1569249613
+8C:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc/acc.v
+FC:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc/acc.v
+L0 1
+OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1569249692.000000
+!s107 C:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc/acc.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc|C:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc/acc.v|
+!i113 1
+o-vlog01compat -work work
+!s92 -vlog01compat -work work +incdir+C:/Users/rodri/Documents/UNIFEI/ELTD15/Lab04/Multiplicador_A/acc
+tCvgOpt 0

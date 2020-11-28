@@ -1,0 +1,54 @@
+`timescale 1ns/10ps
+
+module registerFile_TB();
+reg clk;
+reg rst;
+reg [3:0] data_InReg;
+reg [3:0] data_OutRegA, data_OutRegB;
+reg [31:0] data_In;
+wire [31:0] regA, regB;
+
+integer i;
+
+registerFile DUT(
+.rst(rst),
+.data_InReg(data_InReg),
+.data_OutRegA(data_OutRegA),
+.data_OutRegB(data_OutRegB),
+.data_In(data_In),
+.regA(regA),
+.regB(regB)
+);
+
+initial begin
+rst = 1;
+data_InReg = 0;
+data_OutRegA = 0;
+data_OutRegB = 3;
+data_In = 250;
+#15 rst = 0;
+
+
+always #40 clk = ~clk;
+
+
+for(i = 0; i <16; i = i +1) begin
+		#1 data_OutRegA = data_OutRegA + 1;
+		data_OutRegB = data_OutRegB + 1;
+	end
+end
+
+always begin
+	#50 data_OutRegA = data_OutRegA + 1;
+	data_InReg = data_InReg + 1;
+	#3 data_OutRegB = data_OutRegB + 1;
+end
+
+always begin
+	#20 data_In = data_In + 25;
+end
+
+initial
+	 #1000 $stop;
+
+endmodule

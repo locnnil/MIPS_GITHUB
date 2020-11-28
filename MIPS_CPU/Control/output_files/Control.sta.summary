@@ -1,0 +1,125 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1200mV 100C Model Setup 'instruction[0]'
+Slack : -2.757
+TNS   : -7.428
+
+Type  : Slow 1200mV 100C Model Setup 'instruction[26]'
+Slack : -2.688
+TNS   : -14.191
+
+Type  : Slow 1200mV 100C Model Hold 'instruction[26]'
+Slack : 0.177
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Hold 'instruction[0]'
+Slack : 0.913
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Recovery 'instruction[0]'
+Slack : -1.793
+TNS   : -5.255
+
+Type  : Slow 1200mV 100C Model Recovery 'instruction[26]'
+Slack : -1.684
+TNS   : -4.928
+
+Type  : Slow 1200mV 100C Model Removal 'instruction[26]'
+Slack : 0.337
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Removal 'instruction[0]'
+Slack : 0.389
+TNS   : 0.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'instruction[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV 100C Model Minimum Pulse Width 'instruction[26]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV -40C Model Setup 'instruction[0]'
+Slack : -2.445
+TNS   : -6.459
+
+Type  : Slow 1200mV -40C Model Setup 'instruction[26]'
+Slack : -2.397
+TNS   : -12.617
+
+Type  : Slow 1200mV -40C Model Hold 'instruction[26]'
+Slack : 0.205
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Hold 'instruction[0]'
+Slack : 0.845
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Recovery 'instruction[0]'
+Slack : -1.668
+TNS   : -4.856
+
+Type  : Slow 1200mV -40C Model Recovery 'instruction[26]'
+Slack : -1.580
+TNS   : -4.592
+
+Type  : Slow 1200mV -40C Model Removal 'instruction[26]'
+Slack : 0.330
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Removal 'instruction[0]'
+Slack : 0.361
+TNS   : 0.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'instruction[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Slow 1200mV -40C Model Minimum Pulse Width 'instruction[26]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV -40C Model Setup 'instruction[0]'
+Slack : -1.712
+TNS   : -4.252
+
+Type  : Fast 1200mV -40C Model Setup 'instruction[26]'
+Slack : -1.670
+TNS   : -7.977
+
+Type  : Fast 1200mV -40C Model Hold 'instruction[26]'
+Slack : -0.093
+TNS   : -0.093
+
+Type  : Fast 1200mV -40C Model Hold 'instruction[0]'
+Slack : 0.471
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Recovery 'instruction[0]'
+Slack : -1.072
+TNS   : -3.154
+
+Type  : Fast 1200mV -40C Model Recovery 'instruction[26]'
+Slack : -0.990
+TNS   : -2.908
+
+Type  : Fast 1200mV -40C Model Removal 'instruction[26]'
+Slack : -0.006
+TNS   : -0.007
+
+Type  : Fast 1200mV -40C Model Removal 'instruction[0]'
+Slack : 0.018
+TNS   : 0.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'instruction[0]'
+Slack : -3.000
+TNS   : -3.000
+
+Type  : Fast 1200mV -40C Model Minimum Pulse Width 'instruction[26]'
+Slack : -3.000
+TNS   : -3.000
+
+------------------------------------------------------------

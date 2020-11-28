@@ -1,0 +1,22 @@
+`timescale 1ns/10ps
+module PC_TB;
+	reg clk;
+	reg rst;
+	wire [9:0] pc_out;
+	
+pc DUT (
+	.clk(clk),
+	.rst(rst),
+	.saida_pc(saida_pc)
+);
+
+initial begin
+	clk = 1;
+	rst = 1;t
+	#2 rst = 0;
+	#2050 $stop;
+end
+	
+always	#1 clk = ~clk;		
+
+endmodule 
