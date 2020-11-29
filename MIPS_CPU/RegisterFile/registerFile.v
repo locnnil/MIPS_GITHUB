@@ -17,12 +17,12 @@ module registerFile #(
 	integer i;
 
 	//Criando os 16 registros do Register file
-	reg[DATA_WIDTH:0] s[0:7]; //0 - 7
-	reg[DATA_WIDTH:0] t[0:7]; //8 - 15
+	reg [DATA_WIDTH:0] s[7:0]; //0 - 7
+	reg [DATA_WIDTH:0] t[7:0]; //8 - 15
 
 	initial begin
 	 //inicializacao dos 16 registros
-	 //for com a inicializacao dos vetores s e t
+	 //for com a inicializacao dos vetores s e t zerando todos os registros
 		for(i = 0; i < 8; i = i + 1)
 			begin
 				s[i] = 0;
@@ -31,24 +31,26 @@ module registerFile #(
 	end
 
 	always @ (*) begin
-
-		if(rst) begin
+		
+						
+		if(rst) begin	//Testa a condição de reset
 			for(i = 0; i < 8; i = i + 1) begin //for com a inicializacao dos vetores s e t
 				s[i] = 0;
 				t[i] = 0;
 			end
 		end
 
-
-		else begin
+		else begin//[3:0] data_InReg
 			if(enable) begin
-				if(data_InReg<8) //verifica para qual reg enviar os dados
+				if(data_InReg<4'b1000) //verifica para qual reg enviar os dados
 					s[data_InReg] <= data_In; //salva os dados de entrada no reg0
-				else if(data_InReg>7)
-					t[data_InReg-8] <= data_In;
+				else if(data_InReg>4'b0111)
+					t[data_InReg-4'b1000] <= data_In; //como o vetor t[7:0] precisa-se tirar 8 do data_InReg para tirar o offset de 8 a 15
 			end					
 		end
+		
 	end
+	
 	
 	always @ (negedge clk) begin
 		if(data_OutRegA<8) //verifica se deve enviar os dados para o regA
