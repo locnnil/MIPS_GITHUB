@@ -48,24 +48,21 @@ module registerFile #(
 					t[data_InReg-4'b1000] <= data_In; //como o vetor t[7:0] precisa-se tirar 8 do data_InReg para tirar o offset de 8 a 15
 			end					
 		end
-		
 	end
 	
-	
+		
 	always @ (negedge clk) begin
-		if(data_OutRegA<8) //verifica se deve enviar os dados para o regA
+		if(data_OutRegA<4'b1000) //verifica se deve enviar os dados para o regA
 				regA <= s[data_OutRegA]; //salva no regB o conteudo do s[i]
-		else if(data_OutRegA>7)
-			regA <= t[data_OutRegA-8];//salva no regB o conteudo do t[i]
+		else if(data_OutRegA>4'b0111)
+			regA <= t[data_OutRegA-4'b1000];//salva no regB o conteudo do t[i]
 			
 
-		if(data_OutRegB<8) //verifica se deve enviar os dados para o regB
+		if(data_OutRegB<4'b1000) //verifica se deve enviar os dados para o regB
 			regB <= s[data_OutRegB]; //salva no regB o conteudo do s[i]
-		else if(data_OutRegB>7)
-			regB <= t[data_OutRegB-8];	//salva no regB o conteudo do t[i]
+		else if(data_OutRegB>4'b0111)
+			regB <= t[data_OutRegB-4'b1000];	//salva no regB o conteudo do t[i]
 	end
-	
-		
 	
 
 endmodule
