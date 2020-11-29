@@ -1,5 +1,6 @@
 module registerFile #(
-	parameter DATA_WIDTH=31 
+	parameter DATA_WIDTH=31,
+	parameter HALF_DATA=15 
 )
 (
 	input clk,
@@ -9,15 +10,15 @@ module registerFile #(
 	input enable,
 	input[3:0] data_OutRegA,
 	input[3:0] data_OutRegB,
-	output reg[15:0] regA,
-	output reg[15:0] regB
+	output reg[HALF_DATA:0] regA,
+	output reg[HALF_DATA:0] regB
 );
 
 	integer i;
 
-	//16 registros do Register file
-	reg[31:0] s[0:7]; //0 - 7
-	reg[31:0] t[0:7]; //8 - 15
+	//Criando os 16 registros do Register file
+	reg[DATA_WIDTH:0] s[0:7]; //0 - 7
+	reg[DATA_WIDTH:0] t[0:7]; //8 - 15
 
 	initial begin
 	 //inicializacao dos 16 registros
