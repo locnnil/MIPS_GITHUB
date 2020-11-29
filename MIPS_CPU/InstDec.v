@@ -12,8 +12,7 @@ wire [31:0] regA;
 wire [31:0] regB;
 wire [31:0] ex_out;
 
-// O ITALO É UM PUTA FASCISTA!
-// EU AMO MUITO MINHA PRINCESA!
+
 Control CTRL(
 	 .instruction(IF_OUT),
 	 .output_control(ctrl_out)
