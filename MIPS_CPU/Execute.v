@@ -29,7 +29,7 @@ multiplicador MULT(
 alu ALU(
 	.A(RA),
 	.B(RB),
-	.option(),
+	.option(), // Poha Medeiros olha esse tanto de fio sem conexão, como é que isso tá funcionando?
 	.out(alu_out)
 );
 

@@ -132,7 +132,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "clock",
+					"name" : "clk",
 					"strict" : false
 				},
 				{

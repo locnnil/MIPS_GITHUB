@@ -9,11 +9,12 @@ always @ (posedge clk) begin
 	if(rst)
 		data_Out <= 0;
 	else begin
-		if(data_In[0] == 0)
+		if(data_In[15] == 0)
 			data_Out <= {16'd0, data_In}; //estende 16 bits para 0
 		else
-			data_Out <= {16'd1, data_In}; //estende 16 bits para 1
+			data_Out <= {16'hFFFF, data_In}; //estende 16 bits para 1
+			
 	end
 end
 
-endmodule
+endmodule 

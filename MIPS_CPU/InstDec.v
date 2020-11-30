@@ -39,7 +39,7 @@ Register RCTRL(
 	.data_Out(out_regCTRL)
 );
 
-registerFile RFile(
+RegisterFile RFile(
 	.clk(clk),
 	.rst(rst),
 	.data_In(WB),
@@ -51,7 +51,7 @@ registerFile RFile(
 	.regB(regB)
 );
 
-extend EX(
+Extend EX(
 	.clk(clk),
 	.rst(rst),
 	.data_In(IF_OUT),

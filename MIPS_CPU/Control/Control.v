@@ -1,11 +1,13 @@
-module Control(
+module Control#(
+	parameter DATA_WIDTH = 31
+)(
 	instruction,
 	output_control
 );
-parameter WIDTH = 31;
 
-input [WIDTH:0] instruction;
-output [WIDTH:0] output_control;
+
+input [DATA_WIDTH:0] instruction;
+output [DATA_WIDTH:0] output_control;
 
 reg			wr, cs;
 reg			ctl_mux_reg;
@@ -20,21 +22,21 @@ reg			erf;
 
 
 
-/*		GRUPO 02 	= 0010
-		GRUPO 02+1	= 0011
+/*				GRUPO 02 	= 0010
+				GRUPO 02+1	= 0011
 			
-		GRUPO+1  rs	   rt     offset
-		LW 	000011 ????? ????? ????????????????		memoria pra registro
+				GRUPO+1   rs	 rt      offset
+		LW 		000011  ?????  ????? ????????????????		memoria pra registro
 		
-		GRUPO+2	rs		rt		 offset		
-		SW 	000100 ????? ????? ????????????????		registro pra memoria
+				GRUPO+2	  rs	 rt		 offset		
+		SW 		000100  ?????  ????? ????????????????		registro pra memoria
 		
-				GRUPO    rs    rt    rd    10  FUNCAO
+				GRUPO    rs    rt    rd    10  FUNÇÃO
 		ADD 	000010 ????? ????? ????? 01010 100000	rd = rs + rt	32
 		SUB 	000010 ????? ????? ????? 01010 100010	rd = rs - rt	34
 		MUL 	000010 ????? ????? ????? 01010 110010					50	
 		AND 	000010 ????? ????? ????? 01010 100100					36
-		OR 	000010 ????? ????? ????? 01010 100101						37
+		OR 		000010 ????? ????? ????? 01010 100101					37
 */
 
 	always @(instruction) begin
@@ -42,16 +44,16 @@ reg			erf;
 			op = instruction[31:26];
 			rs = instruction[25:21];
 			rt = instruction[20:16];
-			code = instruction[15:0];
+			code = instruction[5:0];
 			erf = 1;
 			
-		if(op == 6'b000100) begin
+		if(op == 6'b000010) begin
 			case(code)
-				6'd32: alu_control = 3'd1;	//ADD
-				6'd34: alu_control = 3'd2; 	//SUB
-				6'd36: alu_control = 3'd3; 	//AND
-				6'd37: alu_control = 3'd4; 	//OR
-				6'd50: alu_control = 3'd5; 	//MUL
+				6'd32:   alu_control = 3'b001;		//ADD
+				6'd34:   alu_control = 3'b010;		//SUB
+				6'd36:   alu_control = 3'b011;		//AND
+				6'd37: 	 alu_control = 3'b100;		//OR
+				default: alu_control = 3'b101;		//MUL
 			endcase
 			
 			cs = 0;
@@ -62,7 +64,7 @@ reg			erf;
 
 		end
 		
-		if(op == 6'b000101) begin // LW (LOAD WORD)
+		if(op == 6'b000011) begin // LW (LOAD WORD)
 			alu_control = 3'd1;     
 			ctl_mux_alu = 1;     
 			ctl_mux_reg = 1;     
@@ -71,7 +73,7 @@ reg			erf;
 			rd = rt;
 		end
 		
-		if(op == 6'b000110) begin // SW (STORE WORD)
+		if(op == 6'b000100) begin // SW (STORE WORD)
 			alu_control = 3'd1;    
 			ctl_mux_alu = 1;   
 			ctl_mux_reg = 1;    
