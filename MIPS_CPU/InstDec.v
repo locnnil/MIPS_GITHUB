@@ -1,16 +1,18 @@
-module InstDec(
-	input [31:0] IF_OUT,
+module InstDec #(
+	parameter DATA_WIDTH = 31
+)(
+	input [DATA_WIDTH:0] IF_OUT,
 	input clk,rst,
 	input WB, //WriteBack Mux result
-	output [31:0] out_regA,
-	output [31:0] out_regB,
-	output [31:0] out_regCTRL,
-	output [31:0] out_regIMM
+	output [DATA_WIDTH:0] out_regA,
+	output [DATA_WIDTH:0] out_regB,
+	output [DATA_WIDTH:0] out_regCTRL,
+	output [DATA_WIDTH:0] out_regIMM
 );
-wire [31:0] ctrl_out;
-wire [31:0] regA;
-wire [31:0] regB;
-wire [31:0] ex_out;
+wire [DATA_WIDTH:0] ctrl_out;
+wire [DATA_WIDTH:0] regA;
+wire [DATA_WIDTH:0] regB;
+wire [DATA_WIDTH:0] ex_out;
 
 
 Control CTRL(

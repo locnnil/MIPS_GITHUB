@@ -29,7 +29,7 @@
 (DELAYFILE
   (SDFVERSION "2.1")
   (DESIGN "instructionmemory")
-  (DATE "11/27/2020 19:00:44")
+  (DATE "11/29/2020 20:45:43")
   (VENDOR "Altera")
   (PROGRAM "Quartus Prime")
   (VERSION "Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition")
@@ -358,7 +358,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiv_io_ibuf")
-    (INSTANCE clock\~input)
+    (INSTANCE clk\~input)
     (DELAY
       (ABSOLUTE
         (IOPATH i o (328:328:328) (701:701:701))
@@ -367,7 +367,7 @@
   )
   (CELL
     (CELLTYPE "cycloneiv_clkctrl")
-    (INSTANCE clock\~inputclkctrl)
+    (INSTANCE clk\~inputclkctrl)
     (DELAY
       (ABSOLUTE
         (PORT inclk[0] (195:195:195) (184:184:184))

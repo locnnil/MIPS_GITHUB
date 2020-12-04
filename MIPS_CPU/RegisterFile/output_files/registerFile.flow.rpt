@@ -1,5 +1,5 @@
 Flow report for registerFile
-Mon Nov 25 23:57:14 2019
+Fri Dec 04 12:13:53 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Mon Nov 25 23:57:14 2019       ;
+; Flow Status                        ; Successful - Fri Dec 04 12:13:53 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; registerFile                                ;
 ; Top-level Entity Name              ; registerFile                                ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Device                             ; EP4CGX150DF31I7AD                           ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 598 / 149,760 ( < 1 % )                     ;
-;     Total combinational functions  ; 598 / 149,760 ( < 1 % )                     ;
-;     Dedicated logic registers      ; 32 / 149,760 ( < 1 % )                      ;
-; Total registers                    ; 32                                          ;
-; Total pins                         ; 79 / 508 ( 16 % )                           ;
+; Total logic elements               ; 260 / 149,760 ( < 1 % )                     ;
+;     Total combinational functions  ; 192 / 149,760 ( < 1 % )                     ;
+;     Dedicated logic registers      ; 144 / 149,760 ( < 1 % )                     ;
+; Total registers                    ; 144                                         ;
+; Total pins                         ; 64 / 508 ( 13 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 6,635,520 ( 0 % )                       ;
 ; Embedded Multiplier 9-bit elements ; 0 / 720 ( 0 % )                             ;
@@ -68,7 +68,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/25/2019 23:56:15 ;
+; Start date & time ; 12/04/2020 12:12:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; registerFile        ;
 +-------------------+---------------------+
@@ -79,7 +79,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id      ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------+
-; COMPILER_SIGNATURE_ID                ; 163683365552025.157473697517104        ; --            ; --          ; --              ;
+; COMPILER_SIGNATURE_ID                ; 2220873175049.160709477016208          ; --            ; --          ; --              ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; registerFile_TB ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; registerFile_TB                        ; --            ; --          ; eda_simulation  ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Verilog Hdl                            ; --            ; --          ; eda_simulation  ;
@@ -106,12 +106,12 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:16     ; 1.0                     ; 4846 MB             ; 00:00:25                           ;
-; Fitter               ; 00:00:27     ; 1.0                     ; 5849 MB             ; 00:00:32                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 4760 MB             ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4875 MB             ; 00:00:03                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4731 MB             ; 00:00:02                           ;
-; Total                ; 00:00:52     ; --                      ; --                  ; 00:01:06                           ;
+; Analysis & Synthesis ; 00:00:18     ; 1.0                     ; 4804 MB             ; 00:00:34                           ;
+; Fitter               ; 00:00:29     ; 1.0                     ; 5567 MB             ; 00:00:39                           ;
+; Assembler            ; 00:00:05     ; 1.0                     ; 4755 MB             ; 00:00:05                           ;
+; Timing Analyzer      ; 00:00:04     ; 1.0                     ; 4837 MB             ; 00:00:03                           ;
+; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 4720 MB             ; 00:00:02                           ;
+; Total                ; 00:00:58     ; --                      ; --                  ; 00:01:23                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -120,11 +120,11 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Choconatos       ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; Choconatos       ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; Choconatos       ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Choconatos       ; Windows 10 ; 10.0       ; x86_64         ;
-; EDA Netlist Writer   ; Choconatos       ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-8MCRM7M  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-8MCRM7M  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-8MCRM7M  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-8MCRM7M  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-8MCRM7M  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

@@ -5,7 +5,6 @@ module Control#(
 	output_control
 );
 
-
 input [DATA_WIDTH:0] instruction;
 output [DATA_WIDTH:0] output_control;
 
@@ -19,7 +18,6 @@ reg [4:0]	rt;
 reg [4:0]	rd;
 reg [5:0]	code;
 reg			erf;
-
 
 
 /*				GRUPO 02 	= 0010
@@ -90,4 +88,6 @@ reg			erf;
 	//            [31:23]     |    [22]     |[21:17]  |[16:12] | [11:7] |     [6]     |    [5:3]    | [2] | [1] |   [0]
 	//				9               1            5       5        5           1             3          1    1        1   
 endmodule
-	
+
+
+

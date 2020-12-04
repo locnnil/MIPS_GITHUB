@@ -1,0 +1,20 @@
+Fitter Status : Successful - Sun Nov 29 22:01:56 2020
+Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+Revision Name : memoryfile
+Top-level Entity Name : memoryfile
+Family : Cyclone IV GX
+Device : EP4CGX150DF31I7AD
+Timing Models : Final
+Total logic elements : 202 / 149,760 ( < 1 % )
+    Total combinational functions : 200 / 149,760 ( < 1 % )
+    Dedicated logic registers : 3 / 149,760 ( < 1 % )
+Total registers : 3
+Total pins : 82 / 508 ( 16 % )
+Total virtual pins : 0
+Total memory bits : 2,097,152 / 6,635,520 ( 32 % )
+Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )
+Total GXB Receiver Channel PCS : 0 / 8 ( 0 % )
+Total GXB Receiver Channel PMA : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PCS : 0 / 8 ( 0 % )
+Total GXB Transmitter Channel PMA : 0 / 8 ( 0 % )
+Total PLLs : 0 / 8 ( 0 % )

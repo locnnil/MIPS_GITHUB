@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at registerFile.v(31): always construct contains both blocking and non-blocking assignments File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 31
+Warning (10268): Verilog HDL information at registerFile.v(35): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 35

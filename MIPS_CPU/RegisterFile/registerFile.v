@@ -1,6 +1,6 @@
 module registerFile #(
-	parameter DATA_WIDTH=31,
-	parameter HALF_DATA=15 
+	parameter DATA_WIDTH=32,
+	parameter ADDR_WIDTH=8 
 )
 (
 	input clk,
@@ -10,15 +10,17 @@ module registerFile #(
 	input enable,
 	input[3:0] data_OutRegA,
 	input[3:0] data_OutRegB,
-	output reg[HALF_DATA:0] regA,
-	output reg[HALF_DATA:0] regB
+	output reg[ADDR_WIDTH-1:0] regA,
+	output reg[ADDR_WIDTH-1:0] regB
 );
 
-	integer i;
+//--------------Internal variables----------------
 
-	//Criando os 16 registros do Register file
-	reg [DATA_WIDTH:0] s[7:0]; //0 - 7
-	reg [DATA_WIDTH:0] t[7:0]; //8 - 15
+reg [DATA_WIDTH-1:0] s [0:(1<<ADDR_WIDTH)-1]; //registros de 0 - 7
+
+reg [DATA_WIDTH-1:0] t [0:(1<<ADDR_WIDTH)-1]; //registros de 8 - 15
+
+	integer i;
 
 	initial begin
 	 //inicializacao dos 16 registros
@@ -30,8 +32,7 @@ module registerFile #(
 			end
 	end
 
-	always @ (*) begin
-		
+	always @ (posedge clk) begin
 						
 		if(rst) begin	//Testa a condição de reset
 			for(i = 0; i < 8; i = i + 1) begin //for com a inicializacao dos vetores s e t
@@ -50,8 +51,7 @@ module registerFile #(
 		end
 	end
 	
-		
-	always @ (negedge clk) begin
+	always @ (posedge clk) begin//
 		if(data_OutRegA<4'b1000) //verifica se deve enviar os dados para o regA
 				regA <= s[data_OutRegA]; //salva no regB o conteudo do s[i]
 		else if(data_OutRegA>4'b0111)
@@ -64,5 +64,4 @@ module registerFile #(
 			regB <= t[data_OutRegB-4'b1000];	//salva no regB o conteudo do t[i]
 	end
 	
-
 endmodule

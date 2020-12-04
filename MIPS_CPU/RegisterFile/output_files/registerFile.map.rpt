@@ -1,5 +1,5 @@
 Analysis & Synthesis report for registerFile
-Mon Nov 25 23:56:30 2019
+Fri Dec 04 12:13:08 2020
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -13,13 +13,14 @@ Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. User-Specified and Inferred Latches
+  8. Registers Removed During Synthesis
   9. General Register Statistics
  10. Multiplexer Restructuring Statistics (Restructuring Performed)
- 11. Post-Synthesis Netlist Statistics for Top Partition
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
- 14. Analysis & Synthesis Suppressed Messages
+ 11. Parameter Settings for User Entity Instance: Top-level Entity: |registerFile
+ 12. Post-Synthesis Netlist Statistics for Top Partition
+ 13. Elapsed Time Per Partition
+ 14. Analysis & Synthesis Messages
+ 15. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -45,16 +46,16 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Nov 25 23:56:30 2019       ;
+; Analysis & Synthesis Status        ; Successful - Fri Dec 04 12:13:08 2020       ;
 ; Quartus Prime Version              ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                      ; registerFile                                ;
 ; Top-level Entity Name              ; registerFile                                ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 598                                         ;
-;     Total combinational functions  ; 598                                         ;
-;     Dedicated logic registers      ; 32                                          ;
-; Total registers                    ; 32                                          ;
-; Total pins                         ; 79                                          ;
+; Total logic elements               ; 312                                         ;
+;     Total combinational functions  ; 192                                         ;
+;     Dedicated logic registers      ; 144                                         ;
+; Total registers                    ; 144                                         ;
+; Total pins                         ; 64                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -158,25 +159,24 @@ refer to the applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
 ;     Processor 2            ;   0.0%      ;
-;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                            ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                              ; Library ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
-; registerFile.v                   ; yes             ; User Verilog HDL File  ; C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v ;         ;
-+----------------------------------+-----------------+------------------------+---------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                   ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
+; registerFile.v                   ; yes             ; User Verilog HDL File  ; C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -184,14 +184,14 @@ refer to the applicable agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 79               ;
+; I/O pins                 ; 64               ;
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
-; Maximum fan-out node     ; rst~input        ;
-; Maximum fan-out          ; 256              ;
-; Total fan-out            ; 2546             ;
-; Average fan-out          ; 3.23             ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 144              ;
+; Total fan-out            ; 1232             ;
+; Average fan-out          ; 2.66             ;
 +--------------------------+------------------+
 
 
@@ -200,119 +200,146 @@ refer to the applicable agreement for further details.
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+--------------+
 ; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name  ; Library Name ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+--------------+
-; |registerFile              ; 598 (598)           ; 32 (32)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 79   ; 0            ; |registerFile       ; registerFile ; work         ;
+; |registerFile              ; 192 (192)           ; 144 (144)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 64   ; 0            ; |registerFile       ; registerFile ; work         ;
 +----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+---------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                 ;
-+------------------------------------------------------+---------------------+------------------------+
-; Latch Name                                           ; Latch Enable Signal ; Free of Timing Hazards ;
-+------------------------------------------------------+---------------------+------------------------+
-; t[2][0]                                              ; t[2][15]            ; yes                    ;
-; t[1][0]                                              ; t[1][15]            ; yes                    ;
-; t[0][0]                                              ; t[0][15]            ; yes                    ;
-; t[3][0]                                              ; t[3][15]            ; yes                    ;
-; s[5][0]                                              ; s[5][15]            ; yes                    ;
-; s[6][0]                                              ; s[6][15]            ; yes                    ;
-; s[4][0]                                              ; s[4][15]            ; yes                    ;
-; s[7][0]                                              ; s[7][15]            ; yes                    ;
-; s[2][0]                                              ; s[2][15]            ; yes                    ;
-; s[1][0]                                              ; s[1][15]            ; yes                    ;
-; s[0][0]                                              ; s[0][14]            ; yes                    ;
-; s[3][0]                                              ; s[3][15]            ; yes                    ;
-; t[5][0]                                              ; t[5][15]            ; yes                    ;
-; t[6][0]                                              ; t[6][15]            ; yes                    ;
-; t[4][0]                                              ; t[4][15]            ; yes                    ;
-; t[7][0]                                              ; t[7][15]            ; yes                    ;
-; s[6][1]                                              ; s[6][15]            ; yes                    ;
-; t[2][1]                                              ; t[2][15]            ; yes                    ;
-; s[2][1]                                              ; s[2][15]            ; yes                    ;
-; t[6][1]                                              ; t[6][15]            ; yes                    ;
-; t[1][1]                                              ; t[1][15]            ; yes                    ;
-; s[5][1]                                              ; s[5][15]            ; yes                    ;
-; s[1][1]                                              ; s[1][15]            ; yes                    ;
-; t[5][1]                                              ; t[5][15]            ; yes                    ;
-; s[4][1]                                              ; s[4][15]            ; yes                    ;
-; t[0][1]                                              ; t[0][15]            ; yes                    ;
-; s[0][1]                                              ; s[0][14]            ; yes                    ;
-; t[4][1]                                              ; t[4][15]            ; yes                    ;
-; t[3][1]                                              ; t[3][15]            ; yes                    ;
-; s[7][1]                                              ; s[7][15]            ; yes                    ;
-; s[3][1]                                              ; s[3][15]            ; yes                    ;
-; t[7][1]                                              ; t[7][15]            ; yes                    ;
-; s[6][2]                                              ; s[6][15]            ; yes                    ;
-; s[5][2]                                              ; s[5][15]            ; yes                    ;
-; s[4][2]                                              ; s[4][15]            ; yes                    ;
-; s[7][2]                                              ; s[7][15]            ; yes                    ;
-; t[1][2]                                              ; t[1][15]            ; yes                    ;
-; t[2][2]                                              ; t[2][15]            ; yes                    ;
-; t[0][2]                                              ; t[0][15]            ; yes                    ;
-; t[3][2]                                              ; t[3][15]            ; yes                    ;
-; s[1][2]                                              ; s[1][15]            ; yes                    ;
-; s[2][2]                                              ; s[2][15]            ; yes                    ;
-; s[0][2]                                              ; s[0][14]            ; yes                    ;
-; s[3][2]                                              ; s[3][15]            ; yes                    ;
-; t[6][2]                                              ; t[6][15]            ; yes                    ;
-; t[5][2]                                              ; t[5][15]            ; yes                    ;
-; t[4][2]                                              ; t[4][15]            ; yes                    ;
-; t[7][2]                                              ; t[7][15]            ; yes                    ;
-; s[5][3]                                              ; s[5][15]            ; yes                    ;
-; t[1][3]                                              ; t[1][15]            ; yes                    ;
-; s[1][3]                                              ; s[1][15]            ; yes                    ;
-; t[5][3]                                              ; t[5][15]            ; yes                    ;
-; t[2][3]                                              ; t[2][15]            ; yes                    ;
-; s[6][3]                                              ; s[6][15]            ; yes                    ;
-; s[2][3]                                              ; s[2][15]            ; yes                    ;
-; t[6][3]                                              ; t[6][15]            ; yes                    ;
-; t[0][3]                                              ; t[0][15]            ; yes                    ;
-; s[4][3]                                              ; s[4][15]            ; yes                    ;
-; s[0][3]                                              ; s[0][14]            ; yes                    ;
-; t[4][3]                                              ; t[4][15]            ; yes                    ;
-; s[7][3]                                              ; s[7][15]            ; yes                    ;
-; t[3][3]                                              ; t[3][15]            ; yes                    ;
-; s[3][3]                                              ; s[3][15]            ; yes                    ;
-; t[7][3]                                              ; t[7][15]            ; yes                    ;
-; t[2][4]                                              ; t[2][15]            ; yes                    ;
-; t[1][4]                                              ; t[1][15]            ; yes                    ;
-; t[0][4]                                              ; t[0][15]            ; yes                    ;
-; t[3][4]                                              ; t[3][15]            ; yes                    ;
-; s[5][4]                                              ; s[5][15]            ; yes                    ;
-; s[6][4]                                              ; s[6][15]            ; yes                    ;
-; s[4][4]                                              ; s[4][15]            ; yes                    ;
-; s[7][4]                                              ; s[7][15]            ; yes                    ;
-; s[2][4]                                              ; s[2][15]            ; yes                    ;
-; s[1][4]                                              ; s[1][15]            ; yes                    ;
-; s[0][4]                                              ; s[0][14]            ; yes                    ;
-; s[3][4]                                              ; s[3][15]            ; yes                    ;
-; t[5][4]                                              ; t[5][15]            ; yes                    ;
-; t[6][4]                                              ; t[6][15]            ; yes                    ;
-; t[4][4]                                              ; t[4][15]            ; yes                    ;
-; t[7][4]                                              ; t[7][15]            ; yes                    ;
-; s[6][5]                                              ; s[6][15]            ; yes                    ;
-; t[2][5]                                              ; t[2][15]            ; yes                    ;
-; s[2][5]                                              ; s[2][15]            ; yes                    ;
-; t[6][5]                                              ; t[6][15]            ; yes                    ;
-; t[1][5]                                              ; t[1][15]            ; yes                    ;
-; s[5][5]                                              ; s[5][15]            ; yes                    ;
-; s[1][5]                                              ; s[1][15]            ; yes                    ;
-; t[5][5]                                              ; t[5][15]            ; yes                    ;
-; s[4][5]                                              ; s[4][15]            ; yes                    ;
-; t[0][5]                                              ; t[0][15]            ; yes                    ;
-; s[0][5]                                              ; s[0][14]            ; yes                    ;
-; t[4][5]                                              ; t[4][15]            ; yes                    ;
-; t[3][5]                                              ; t[3][15]            ; yes                    ;
-; s[7][5]                                              ; s[7][15]            ; yes                    ;
-; s[3][5]                                              ; s[3][15]            ; yes                    ;
-; t[7][5]                                              ; t[7][15]            ; yes                    ;
-; s[6][6]                                              ; s[6][15]            ; yes                    ;
-; s[5][6]                                              ; s[5][15]            ; yes                    ;
-; s[4][6]                                              ; s[4][15]            ; yes                    ;
-; s[7][6]                                              ; s[7][15]            ; yes                    ;
-; Number of user-specified and inferred latches = 256  ;                     ;                        ;
-+------------------------------------------------------+---------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++--------------------------------------------------------------+
+; Registers Removed During Synthesis                           ;
++-----------------------------------------+--------------------+
+; Register name                           ; Reason for Removal ;
++-----------------------------------------+--------------------+
+; t[8][0]                                 ; Lost fanout        ;
+; t[9][0]                                 ; Lost fanout        ;
+; t[10][0]                                ; Lost fanout        ;
+; t[11][0]                                ; Lost fanout        ;
+; t[12][0]                                ; Lost fanout        ;
+; t[13][0]                                ; Lost fanout        ;
+; t[14][0]                                ; Lost fanout        ;
+; t[15][0]                                ; Lost fanout        ;
+; s[8][0]                                 ; Lost fanout        ;
+; s[9][0]                                 ; Lost fanout        ;
+; s[10][0]                                ; Lost fanout        ;
+; s[11][0]                                ; Lost fanout        ;
+; s[12][0]                                ; Lost fanout        ;
+; s[13][0]                                ; Lost fanout        ;
+; s[14][0]                                ; Lost fanout        ;
+; s[15][0]                                ; Lost fanout        ;
+; t[8][1]                                 ; Lost fanout        ;
+; t[9][1]                                 ; Lost fanout        ;
+; t[10][1]                                ; Lost fanout        ;
+; t[11][1]                                ; Lost fanout        ;
+; t[12][1]                                ; Lost fanout        ;
+; t[13][1]                                ; Lost fanout        ;
+; t[14][1]                                ; Lost fanout        ;
+; t[15][1]                                ; Lost fanout        ;
+; s[8][1]                                 ; Lost fanout        ;
+; s[9][1]                                 ; Lost fanout        ;
+; s[10][1]                                ; Lost fanout        ;
+; s[11][1]                                ; Lost fanout        ;
+; s[12][1]                                ; Lost fanout        ;
+; s[13][1]                                ; Lost fanout        ;
+; s[14][1]                                ; Lost fanout        ;
+; s[15][1]                                ; Lost fanout        ;
+; t[8][2]                                 ; Lost fanout        ;
+; t[9][2]                                 ; Lost fanout        ;
+; t[10][2]                                ; Lost fanout        ;
+; t[11][2]                                ; Lost fanout        ;
+; t[12][2]                                ; Lost fanout        ;
+; t[13][2]                                ; Lost fanout        ;
+; t[14][2]                                ; Lost fanout        ;
+; t[15][2]                                ; Lost fanout        ;
+; s[8][2]                                 ; Lost fanout        ;
+; s[9][2]                                 ; Lost fanout        ;
+; s[10][2]                                ; Lost fanout        ;
+; s[11][2]                                ; Lost fanout        ;
+; s[12][2]                                ; Lost fanout        ;
+; s[13][2]                                ; Lost fanout        ;
+; s[14][2]                                ; Lost fanout        ;
+; s[15][2]                                ; Lost fanout        ;
+; t[8][3]                                 ; Lost fanout        ;
+; t[9][3]                                 ; Lost fanout        ;
+; t[10][3]                                ; Lost fanout        ;
+; t[11][3]                                ; Lost fanout        ;
+; t[12][3]                                ; Lost fanout        ;
+; t[13][3]                                ; Lost fanout        ;
+; t[14][3]                                ; Lost fanout        ;
+; t[15][3]                                ; Lost fanout        ;
+; s[8][3]                                 ; Lost fanout        ;
+; s[9][3]                                 ; Lost fanout        ;
+; s[10][3]                                ; Lost fanout        ;
+; s[11][3]                                ; Lost fanout        ;
+; s[12][3]                                ; Lost fanout        ;
+; s[13][3]                                ; Lost fanout        ;
+; s[14][3]                                ; Lost fanout        ;
+; s[15][3]                                ; Lost fanout        ;
+; t[8][4]                                 ; Lost fanout        ;
+; t[9][4]                                 ; Lost fanout        ;
+; t[10][4]                                ; Lost fanout        ;
+; t[11][4]                                ; Lost fanout        ;
+; t[12][4]                                ; Lost fanout        ;
+; t[13][4]                                ; Lost fanout        ;
+; t[14][4]                                ; Lost fanout        ;
+; t[15][4]                                ; Lost fanout        ;
+; s[8][4]                                 ; Lost fanout        ;
+; s[9][4]                                 ; Lost fanout        ;
+; s[10][4]                                ; Lost fanout        ;
+; s[11][4]                                ; Lost fanout        ;
+; s[12][4]                                ; Lost fanout        ;
+; s[13][4]                                ; Lost fanout        ;
+; s[14][4]                                ; Lost fanout        ;
+; s[15][4]                                ; Lost fanout        ;
+; t[8][5]                                 ; Lost fanout        ;
+; t[9][5]                                 ; Lost fanout        ;
+; t[10][5]                                ; Lost fanout        ;
+; t[11][5]                                ; Lost fanout        ;
+; t[12][5]                                ; Lost fanout        ;
+; t[13][5]                                ; Lost fanout        ;
+; t[14][5]                                ; Lost fanout        ;
+; t[15][5]                                ; Lost fanout        ;
+; s[8][5]                                 ; Lost fanout        ;
+; s[9][5]                                 ; Lost fanout        ;
+; s[10][5]                                ; Lost fanout        ;
+; s[11][5]                                ; Lost fanout        ;
+; s[12][5]                                ; Lost fanout        ;
+; s[13][5]                                ; Lost fanout        ;
+; s[14][5]                                ; Lost fanout        ;
+; s[15][5]                                ; Lost fanout        ;
+; t[8][6]                                 ; Lost fanout        ;
+; t[9][6]                                 ; Lost fanout        ;
+; t[10][6]                                ; Lost fanout        ;
+; t[11][6]                                ; Lost fanout        ;
+; t[12][6]                                ; Lost fanout        ;
+; t[13][6]                                ; Lost fanout        ;
+; t[14][6]                                ; Lost fanout        ;
+; t[15][6]                                ; Lost fanout        ;
+; s[8][6]                                 ; Lost fanout        ;
+; s[9][6]                                 ; Lost fanout        ;
+; s[10][6]                                ; Lost fanout        ;
+; s[11][6]                                ; Lost fanout        ;
+; s[12][6]                                ; Lost fanout        ;
+; s[13][6]                                ; Lost fanout        ;
+; s[14][6]                                ; Lost fanout        ;
+; s[15][6]                                ; Lost fanout        ;
+; t[8][7]                                 ; Lost fanout        ;
+; t[9][7]                                 ; Lost fanout        ;
+; t[10][7]                                ; Lost fanout        ;
+; t[11][7]                                ; Lost fanout        ;
+; t[12][7]                                ; Lost fanout        ;
+; t[13][7]                                ; Lost fanout        ;
+; t[14][7]                                ; Lost fanout        ;
+; t[15][7]                                ; Lost fanout        ;
+; s[8][7]                                 ; Lost fanout        ;
+; s[9][7]                                 ; Lost fanout        ;
+; s[10][7]                                ; Lost fanout        ;
+; s[11][7]                                ; Lost fanout        ;
+; s[12][7]                                ; Lost fanout        ;
+; s[13][7]                                ; Lost fanout        ;
+; s[14][7]                                ; Lost fanout        ;
+; s[15][7]                                ; Lost fanout        ;
+; Total Number of Removed Registers = 128 ;                    ;
++-----------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -320,12 +347,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 32    ;
+; Total registers                              ; 144   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 128   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -335,9 +362,36 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |registerFile|regA[0]~reg0 ;
-; 16:1               ; 16 bits   ; 160 LEs       ; 160 LEs              ; 0 LEs                  ; Yes        ; |registerFile|regB[0]~reg0 ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[0][0]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[1][3]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[2][3]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[3][3]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[4][3]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[5][5]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[6][1]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|t[7][5]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[0][3]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[1][4]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[2][4]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[3][6]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[4][5]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[5][2]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[6][6]      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |registerFile|s[7][3]      ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; Yes        ; |registerFile|regA[5]~reg0 ;
+; 32:1               ; 8 bits    ; 168 LEs       ; 168 LEs              ; 0 LEs                  ; Yes        ; |registerFile|regB[5]~reg0 ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |registerFile ;
++----------------+-------+-----------------------------------------------------+
+; Parameter Name ; Value ; Type                                                ;
++----------------+-------+-----------------------------------------------------+
+; DATA_WIDTH     ; 32    ; Signed Integer                                      ;
+; ADDR_WIDTH     ; 8     ; Signed Integer                                      ;
++----------------+-------+-----------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-----------------------------------------------------+
@@ -345,17 +399,18 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 79                          ;
-; cycloneiii_ff         ; 32                          ;
-;     plain             ; 32                          ;
-; cycloneiii_lcell_comb ; 598                         ;
-;     normal            ; 598                         ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 17                          ;
-;         4 data inputs ; 579                         ;
+; boundary_port         ; 64                          ;
+; cycloneiii_ff         ; 144                         ;
+;     ENA               ; 128                         ;
+;     plain             ; 16                          ;
+; cycloneiii_lcell_comb ; 192                         ;
+;     normal            ; 192                         ;
+;         2 data inputs ; 8                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 168                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 4.00                        ;
-; Average LUT depth     ; 3.08                        ;
+; Average LUT depth     ; 2.97                        ;
 +-----------------------+-----------------------------+
 
 
@@ -364,7 +419,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:02     ;
+; Top            ; 00:00:01     ;
 +----------------+--------------+
 
 
@@ -374,311 +429,71 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Mon Nov 25 23:56:14 2019
+    Info: Processing started: Fri Dec 04 12:12:49 2020
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off registerFile -c registerFile
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file registerfile_tb.v
-    Info (12023): Found entity 1: registerFile_TB File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile_TB.v Line: 3
+Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Warning (12019): Can't analyze file -- file registerFile_TB.v is missing
 Info (12021): Found 1 design units, including 1 entities, in source file registerfile.v
-    Info (12023): Found entity 1: registerFile File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 1
+    Info (12023): Found entity 1: registerFile File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 1
 Info (12127): Elaborating entity "registerFile" for the top level hierarchy
-Warning (10240): Verilog HDL Always Construct warning at registerFile.v(31): inferring latch(es) for variable "i", which holds its previous value in one or more paths through the always construct File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 31
-Warning (10230): Verilog HDL assignment warning at registerFile.v(51): truncated value with size 32 to match size of target (16) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 51
-Warning (10230): Verilog HDL assignment warning at registerFile.v(53): truncated value with size 32 to match size of target (16) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 53
-Warning (10230): Verilog HDL assignment warning at registerFile.v(57): truncated value with size 32 to match size of target (16) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 57
-Warning (10230): Verilog HDL assignment warning at registerFile.v(59): truncated value with size 32 to match size of target (16) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 59
-Info (10041): Inferred latch for "t[7][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[7][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[6][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[5][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[4][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[3][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[2][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[1][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "t[0][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[7][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[6][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[5][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[4][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[3][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[2][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[1][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][0]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][1]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][2]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][3]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][4]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][5]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][6]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][7]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][8]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][9]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][10]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][11]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][12]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][13]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][14]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
-Info (10041): Inferred latch for "s[0][15]" at registerFile.v(40) File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 40
+Warning (10855): Verilog HDL warning at registerFile.v(25): initial value for variable s should be constant File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 25
+Warning (10855): Verilog HDL warning at registerFile.v(25): initial value for variable t should be constant File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 25
+Warning (10230): Verilog HDL assignment warning at registerFile.v(47): truncated value with size 33 to match size of target (32) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 47
+Warning (10230): Verilog HDL assignment warning at registerFile.v(49): truncated value with size 33 to match size of target (32) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 49
+Warning (10027): Verilog HDL or VHDL warning at the registerFile.v(56): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 56
+Warning (10230): Verilog HDL assignment warning at registerFile.v(56): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 56
+Warning (10027): Verilog HDL or VHDL warning at the registerFile.v(58): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 58
+Warning (10230): Verilog HDL assignment warning at registerFile.v(58): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 58
+Warning (10027): Verilog HDL or VHDL warning at the registerFile.v(62): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 62
+Warning (10230): Verilog HDL assignment warning at registerFile.v(62): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 62
+Warning (10027): Verilog HDL or VHDL warning at the registerFile.v(64): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 64
+Warning (10230): Verilog HDL assignment warning at registerFile.v(64): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 64
 Info (286030): Timing-Driven Synthesis is running
-Info (144001): Generated suppressed messages file C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/output_files/registerFile.map.smsg
+Info (17049): 128 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/output_files/registerFile.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "data_In[16]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[17]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[18]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[19]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[20]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[21]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[22]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[23]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[24]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[25]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[26]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[27]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[28]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[29]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[30]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-    Warning (15610): No output dependent on input pin "data_In[31]" File: C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/registerFile.v Line: 4
-Info (21057): Implemented 677 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 47 input pins
-    Info (21059): Implemented 32 output pins
-    Info (21061): Implemented 598 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
-    Info: Peak virtual memory: 4846 megabytes
-    Info: Processing ended: Mon Nov 25 23:56:30 2019
-    Info: Elapsed time: 00:00:16
-    Info: Total CPU time (on all processors): 00:00:26
+Warning (21074): Design contains 25 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "data_In[8]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[9]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[10]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[11]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[12]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[13]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[14]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[15]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[16]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[17]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[18]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[19]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[20]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[21]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[22]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[23]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[24]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[25]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[26]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[27]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[28]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[29]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[30]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[31]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+    Warning (15610): No output dependent on input pin "data_In[32]" File: C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/registerFile.v Line: 8
+Info (21057): Implemented 384 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 48 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 320 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 40 warnings
+    Info: Peak virtual memory: 4813 megabytes
+    Info: Processing ended: Fri Dec 04 12:13:08 2020
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:34
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/Users/rodri/Documents/GitHub/MIPS/MIPS_CPU/RegisterFile/output_files/registerFile.map.smsg.
+The suppressed messages can be found in C:/intelFPGA_lite/18.1/Projetos/MIPS_GITHUB/MIPS_CPU/RegisterFile/output_files/registerFile.map.smsg.
 
 

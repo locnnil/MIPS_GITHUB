@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon Nov 25 23:56:30 2019
+Analysis & Synthesis Status : Successful - Fri Dec 04 12:13:08 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : registerFile
 Top-level Entity Name : registerFile
 Family : Cyclone IV GX
-Total logic elements : 598
-    Total combinational functions : 598
-    Dedicated logic registers : 32
-Total registers : 32
-Total pins : 79
+Total logic elements : 312
+    Total combinational functions : 192
+    Dedicated logic registers : 144
+Total registers : 144
+Total pins : 64
 Total virtual pins : 0
 Total memory bits : 0
 Embedded Multiplier 9-bit elements : 0

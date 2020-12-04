@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Nov 25 23:56:59 2019
+Fitter Status : Successful - Fri Dec 04 12:13:38 2020
 Quartus Prime Version : 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 Revision Name : registerFile
 Top-level Entity Name : registerFile
 Family : Cyclone IV GX
 Device : EP4CGX150DF31I7AD
 Timing Models : Final
-Total logic elements : 598 / 149,760 ( < 1 % )
-    Total combinational functions : 598 / 149,760 ( < 1 % )
-    Dedicated logic registers : 32 / 149,760 ( < 1 % )
-Total registers : 32
-Total pins : 79 / 508 ( 16 % )
+Total logic elements : 260 / 149,760 ( < 1 % )
+    Total combinational functions : 192 / 149,760 ( < 1 % )
+    Dedicated logic registers : 144 / 149,760 ( < 1 % )
+Total registers : 144
+Total pins : 64 / 508 ( 13 % )
 Total virtual pins : 0
 Total memory bits : 0 / 6,635,520 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )

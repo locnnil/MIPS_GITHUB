@@ -1,6 +1,4 @@
-module alu (A, B, option, out);
-
-	parameter DATA_WIDTH = 32;
+module alu #(parameter DATA_WIDTH = 32)(A, B, option, out);
 	
 	input [(DATA_WIDTH - 1):0] A, B;
 	input [1:0] option;
@@ -9,14 +7,15 @@ module alu (A, B, option, out);
 
 	always @ (A, B, option) 
 	begin
-		if (option == 2'b00 ) 
-			out <= A + B;
-		else if (option == 2'b01 ) 
-			out <= A - B;
-		else if (option == 2'b10 ) 
-			out <= A & B;
-		else  
-			out <= A | B;
+
+		// UL UL UL, tem que botar o default!!! #MEDEIRIN V-A-G-A-B-U-N-D-O
+		case(option)begin
+			2'b00: 		out <= A + B;
+			2'b01: 		out <= A - B;
+			2'b10:		out <= A & B;
+			default: 	out <= A | B;
+		endcase
+		
 	end
 
 endmodule 
